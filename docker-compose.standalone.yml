@@ -1,0 +1,18 @@
+# Versi standalone -- untuk testing lokal / kalau kamu TIDAK pakai
+# nginx reverse proxy eksternal dan mau langsung expose port ke host.
+#
+# Pakai:
+#   docker compose -f docker-compose.standalone.yml up -d --build
+#
+# Lalu akses http://localhost:8080 (Indonesia) atau
+# http://localhost:8080/en/ (English)
+
+services:
+  sdk-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sdk-web
+    restart: unless-stopped
+    ports:
+      - "8080:80"

@@ -1,0 +1,31 @@
+services:
+  sdk-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sdk-web
+    restart: unless-stopped
+
+    # Tidak publish port ke host -- diakses lewat nginx reverse proxy
+    # eksternal di VPS lewat network "proxy-network" di bawah ini.
+    # (Ini pola yang sama seperti HMS/HRIS: hindari bentrok port di host,
+    # biar reverse proxy yang urus routing per domain/subdomain.)
+    expose:
+      - "80"
+
+    # Kalau reverse proxy VPS kamu tipe "nginx-proxy" (auto-routing
+    # berdasarkan env var, bukan config manual) -- uncomment 2 baris
+    # di bawah dan ganti dengan domain client-nya:
+    # environment:
+    #   VIRTUAL_HOST: sdk.example.com
+    #   LETSENCRYPT_HOST: sdk.example.com   # kalau pakai acme-companion
+
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true
+    # Network ini harus SUDAH ADA duluan (dibuat oleh nginx-proxy /
+    # reverse proxy kamu yang sudah jalan di VPS). Kalau belum ada:
+    #   docker network create proxy-network

@@ -1,0 +1,219 @@
+.tf-fade-top {
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+.tf-fade-left {
+    transform: translateX(-20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+.tf-fade-right {
+    transform: translateX(20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+.tf-fade-bottom {
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+
+.tf-fade-bottom-left {
+    transform: translate(20px, -20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+.tf-fade-top-right {
+    transform: translate(-20px, -20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+.tf-animate-1 {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    @include transition-cubic-1();
+
+    &.active-animate {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    &.transition-1s {
+        @include transition-cubic-2();
+    }
+}
+
+.tf-animate-2 {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    @include transition-cubic-1();
+
+    &.active-animate {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    &.transition-1s {
+        @include transition-cubic-2();
+    }
+}
+
+.tf-animate-3 {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+    @include transition-cubic-1();
+
+    &.active-animate {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    &.transition-1s {
+        @include transition-cubic-2();
+    }
+}
+
+.tf-animate-4 {
+    clip-path: inset(0 0 0 100%);
+    opacity: 0;
+    @include transition-cubic-1();
+
+    &.active-animate {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    &.transition-1s {
+        @include transition-cubic-2();
+    }
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+    }
+
+    100% {
+        width: 150%;
+        height: 150%;
+        opacity: 0;
+    }
+}
+
+.text-flip {
+    display: grid;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    position: relative;
+}
+
+.text-face {
+    grid-area: 1 / 1;
+    backface-visibility: hidden;
+}
+
+.text-front {
+    transform: rotateX(0deg);
+}
+
+.text-back {
+    transform: rotateX(180deg);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0 2px 0 var(--primary);
+    }
+
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 0 2px 0 var(--primary);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 0 2px 0 var(--primary);
+    }
+}
+
+.hover-image {
+    .image {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 0%;
+            left: 50%;
+            top: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%) rotate(-45deg);
+            z-index: 1;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 1s;
+        }
+    }
+
+    &:hover {
+        .image {
+            &:after {
+                height: 250%;
+                transition: all 600ms linear;
+                background-color: transparent;
+            }
+
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

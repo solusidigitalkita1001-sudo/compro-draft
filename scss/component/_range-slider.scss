@@ -1,0 +1,93 @@
+/*range-slider
+    ---------------------*/
+.range-slider {
+    .range-two-val {
+        height: 4px;
+        box-shadow: none;
+        border: 0;
+        background: rgba(255, 63, 37, 0.15);
+
+
+        .noUi-connects {
+            position: relative;
+
+            .noUi-connect {
+                background-color: var(--red);
+                height: 3px;
+            }
+        }
+
+        .noUi-origin {
+            .noUi-handle {
+                position: absolute;
+                cursor: pointer;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: var(--red);
+                border: none;
+                box-shadow: none;
+                top: -6px;
+                right: -9px;
+
+                &::after,
+                &::before {
+                    display: none;
+                }
+
+                &:active {
+                    right: -10px !important;
+                }
+
+                &.noUi-handle-lower {
+                    display: none !important;
+                }
+            }
+
+        }
+    }
+
+    .bottom {
+        margin-top: 21px;
+        @include d-flex();
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .value {
+        width: 100%;
+        gap: 15px;
+        margin-top: 10px;
+        h6 {
+            color: var(--color-title);
+        }
+    }
+
+    .input-container {
+        div {
+            position: absolute;
+            width: max-content;
+            padding: 5px;
+            margin: 0;
+            border: 1px solid var(--Line);
+            border-radius: 5px;
+            top: 20%;
+            background-color: var(--White);
+
+            &::before {
+                position: absolute;
+                display: block;
+                content: "";
+                bottom: -6px;
+                left: 50%;
+                width: 0;
+                height: 0;
+                margin-left: -3px;
+                overflow: hidden;
+                border: 3px solid var(--Line);
+                border-top-color: transparent;
+                border-top-color: var(--White);
+            }
+        }
+    }
+}
