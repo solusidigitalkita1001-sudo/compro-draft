@@ -38,13 +38,19 @@ const I18N_DIR = path.join(ROOT, "source/i18n");
 const ASSET_DIRS = ["css", "js", "image", "icons", "scss", "contact"];
 
 // -----------------------------------------------------------------
-// Konfigurasi bahasa. "prefix" menentukan sub-folder output di dist/.
-// id = default, tampil di root (tanpa prefix) supaya URL lama tetap jalan.
-// en = tampil di dist/en/.
+// Konfigurasi bahasa.
+// - dirPrefix -> nama sub-folder OUTPUT di dist/ (filesystem, relatif)
+// - urlPrefix -> prefix untuk href DI DALAM HTML (harus root-absolute,
+//   diawali "/", supaya tidak jadi relatif terhadap folder saat ini.
+//   Kalau cuma "en/" tanpa "/" di depan, waktu browser lagi buka
+//   /en/index.html maka href="en/about-us.html" akan diartikan
+//   relatif -> jadi /en/en/about-us.html, DOBEL. Makanya harus
+//   root-absolute: "/en/about-us.html".)
+// id = default, tampil di root. en = tampil di /en/.
 // -----------------------------------------------------------------
 const LOCALES = {
-  id: { prefix: "", htmlLang: "id", sibLocale: "id" },
-  en: { prefix: "en/", htmlLang: "en", sibLocale: "en" },
+  id: { dirPrefix: "", urlPrefix: "/", htmlLang: "id", sibLocale: "id" },
+  en: { dirPrefix: "en/", urlPrefix: "/en/", htmlLang: "en", sibLocale: "en" },
 };
 
 const pageConfig = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf-8"));
@@ -116,19 +122,19 @@ function applyI18n(content, dict) {
 
 function applyLocaleTokens(content, locale, localeCfg, currentPage) {
   const otherLocale = locale === "id" ? "en" : "id";
-  const otherPrefix = LOCALES[otherLocale].prefix;
-  const langSwitchUrl = "/" + otherPrefix + currentPage;
+  const otherUrlPrefix = LOCALES[otherLocale].urlPrefix;
+  const langSwitchUrl = otherUrlPrefix + currentPage;
 
   return content
-    .replace(/\{\{LANG_PREFIX\}\}/g, localeCfg.prefix)
+    .replace(/\{\{LANG_PREFIX\}\}/g, localeCfg.urlPrefix)
     .replace(/\{\{LOCALE\}\}/g, localeCfg.sibLocale)
     .replace(/\{\{HTML_LANG\}\}/g, localeCfg.htmlLang)
     .replace(/\{\{LANG_SWITCH_URL\}\}/g, langSwitchUrl);
 }
 
 function buildHreflangTags(currentPage) {
-  const idUrl = "/" + currentPage;
-  const enUrl = "/en/" + currentPage;
+  const idUrl = LOCALES.id.urlPrefix + currentPage;
+  const enUrl = LOCALES.en.urlPrefix + currentPage;
   return [
     `<link rel="alternate" hreflang="id" href="${idUrl}" />`,
     `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
@@ -232,7 +238,7 @@ function build() {
     const dict = JSON.parse(fs.readFileSync(i18nPath, "utf-8"));
 
     const localeConfig = pageConfig[locale] || {};
-    const outDir = path.join(OUTPUT_DIR, localeCfg.prefix);
+    const outDir = path.join(OUTPUT_DIR, localeCfg.dirPrefix);
     fs.mkdirSync(outDir, { recursive: true });
 
     const pageFiles = fs.readdirSync(pagesDir).filter((f) => f.endsWith(".html"));

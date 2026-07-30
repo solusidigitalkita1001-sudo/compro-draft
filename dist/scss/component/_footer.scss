@@ -1,0 +1,177 @@
+.footer {
+    overflow: hidden;
+    background-color: var(--dark-2);
+    position: relative;
+
+    .footer-top {
+        padding-top: 90px;
+        padding-bottom: 91px;
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: var(--stroke-2);
+    }
+
+    .footer-go-top {
+        margin-top: -35px;
+        margin-bottom: -2px;
+    }
+
+    .footer-middle {
+        margin-bottom: 103px;
+        gap: 50px 30px;
+    }
+
+    .mask {
+        position: absolute;
+
+        &.mask-1 {
+            top: 27px;
+            right: -31%;
+        }
+
+        &.mask-2 {
+            top: auto;
+            bottom: -41%;
+            left: -27%;
+        }
+    }
+
+    .footer-bottom {
+        margin-bottom: 40px;
+    }
+
+    .locations-contact {
+        max-width: 240px;
+        width: 100%;
+    }
+
+    .list-bottom {
+        margin-top: -9px;
+    }
+}
+
+.footer-go-top {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid var(--stroke-2);
+    @include flex(center, center);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        background-color: var(--white);
+    }
+
+    i {
+        color: var(--main-dark);
+        position: relative;
+    }
+}
+
+.footer-middle {
+    .left {
+        max-width: 594px;
+        width: 100%;
+    }
+
+    .text {
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer-content {
+
+    .title-mobile {
+        @include d-flex();
+        justify-content: space-between;
+        align-items: center;
+
+        i {
+            font-size: 7px;
+            @include transition4();
+        }
+    }
+
+    ul {
+        margin-top: 35px;
+    }
+
+    li {
+        margin-bottom: 24px;
+
+        a {
+            color: var(--surface);
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.open {
+        .title-mobile {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.locations-contact {
+    .item {
+        .title {
+            margin-bottom: 30px;
+        }
+    }
+
+    .locations-footer {
+        .address {
+            letter-spacing: 0.3px;
+        }
+    }
+
+    .contact-footer {
+        .title {
+            margin-bottom: 36px;
+        }
+
+        a {
+            letter-spacing: 0.3px;
+            display: inline-block;
+            margin-bottom: 9px;
+        }
+
+        h4 {
+            a {
+                letter-spacing: 0.75px;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+
+    ul {
+        gap: 46px;
+    }
+}

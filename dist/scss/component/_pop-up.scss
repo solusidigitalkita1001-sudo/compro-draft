@@ -1,0 +1,82 @@
+.offcanvasMegamenu {
+    background-color: var(--dark-2);
+    max-width: 450px;
+    width: 100% !important;
+    --bs-offcanvas-height: max-content;
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 999999;
+
+    .tf-close-btn{
+        @include flex(center,center);
+        
+    }
+
+    .heading {
+        margin-bottom: 30px;
+        text-align: end;
+    }
+    .desc{
+        color: var(--surface);
+        margin-bottom: 40px;
+    }
+
+    .title-content {
+        color: var(--white);
+        margin-bottom: 15px;
+    }
+
+    .contact-list-mega-menu {
+        margin-bottom: 40px;
+        li {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            p{
+                color: var(--white);
+            }
+            a{
+                color: var(--surface);
+                &:hover{
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+
+    .megamenu-subscribe{
+        margin-bottom: 40px;
+    }
+
+    .megamenu-recent {
+        .tf-post-list {
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+
+            &:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border-bottom: 0;
+            }
+        }
+    }
+
+}
+
+.overlay-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-dark);
+    visibility: hidden;
+    opacity: 0;
+    @include transition3();
+
+    &.show {
+        visibility: visible;
+        opacity: 0.3;
+    }
+}

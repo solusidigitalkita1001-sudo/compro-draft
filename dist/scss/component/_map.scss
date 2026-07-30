@@ -1,0 +1,10 @@
+.map {
+    max-width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+.mapboxgl-ctrl-attrib a,
+.mapboxgl-ctrl-attrib.mapboxgl-compact,
+a.mapboxgl-ctrl-logo {
+    display: none !important;
+}

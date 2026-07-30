@@ -1,0 +1,58 @@
+# =============================================================
+# MODE DEV -- untuk development sehari-hari.
+#
+# Beda dengan docker-compose.standalone.yml / docker-compose.yml:
+# di sini folder source/ (dan css/js/image/dst) di-MOUNT sebagai
+# volume, bukan di-COPY ke image. Jadi tiap kamu edit & save file,
+# otomatis ke-detect dan `node build.js` otomatis jalan ulang --
+# TANPA perlu `docker compose up --build` lagi.
+#
+# Pakai:
+#   docker compose -f docker-compose.dev.yml up -d
+#
+# Lalu tinggal edit file di source/, save, tunggu ~1 detik, refresh
+# browser di http://localhost:8080
+#
+# Log build bisa dilihat lewat:
+#   docker compose -f docker-compose.dev.yml logs -f build-watcher
+#
+# Matikan:
+#   docker compose -f docker-compose.dev.yml down
+# =============================================================
+
+services:
+  # Container ini TIDAK serve apa-apa ke browser -- tugasnya cuma
+  # memantau perubahan file & menjalankan `node build.js` ke folder
+  # dist/ (yang di-share ke container "web" di bawah).
+  build-watcher:
+    image: node:20-alpine
+    container_name: sdk-web-build-watcher
+    working_dir: /app
+    volumes:
+      - ./build.js:/app/build.js:ro
+      - ./watch.js:/app/watch.js:ro
+      - ./page.config.json:/app/page.config.json:ro
+      - ./source:/app/source:ro
+      - ./css:/app/css:ro
+      - ./js:/app/js:ro
+      - ./image:/app/image:ro
+      - ./icons:/app/icons:ro
+      - ./scss:/app/scss:ro
+      - ./contact:/app/contact:ro
+      - ./dist:/app/dist
+    command: ["node", "watch.js"]
+    restart: unless-stopped
+
+  # Container ini yang serve ke browser, cukup baca folder dist/
+  # yang sama (di-update terus oleh build-watcher di atas).
+  web:
+    image: nginx:1.27-alpine
+    container_name: sdk-web-dev
+    depends_on:
+      - build-watcher
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "8080:80"
+    restart: unless-stopped
