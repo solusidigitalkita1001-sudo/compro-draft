@@ -1,0 +1,23 @@
+{
+  "about_title": "About Us",
+  "about_box_logo_title": "SDK",
+  "about_box_avatar_text": "5m+ Trusted<br>Global Clients",
+  "about_achieve_subtitle": "Explore Our Achievement",
+  "about_achieve_title_prefix": "Premier Tech Innovations",
+  "about_achieve_title_highlight": "Solusi Digital Kita",
+  "about_stat1_label": "Trusted Global Clients",
+  "about_stat2_label": "Best Project Complete",
+
+  "contact_title": "Contact Us",
+  "contact_hero_sub": "Get In Touch",
+  "contact_hero_title_prefix": "Let’s Talk For",
+  "contact_hero_title_highlight": "Next Projects",
+  "contact_hero_desc": "Have a project in mind? Tell us a bit about it and our team will get back to you shortly",
+  "contact_office_label": "Main Office",
+  "contact_follow_label": "Follow Me",
+  "contact_form_phone_label": "Phone Number",
+  "contact_form_subject_label": "Subject",
+  "contact_form_subject_default": "I would like to discussed",
+  "contact_form_message_label": "Message",
+  "contact_form_submit": "Send Us Message"
+}

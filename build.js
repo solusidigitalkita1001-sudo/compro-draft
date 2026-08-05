@@ -6,11 +6,15 @@
  * Mendukung 2 bahasa: Indonesia (default, di root) & English (di /en/).
  *
  * Yang dilakukan:
- *   1. Untuk tiap bahasa, membaca source/pages/<locale>/*.html
+ *   1. Membaca SATU file source/pages/*.html per halaman (tidak ada
+ *      lagi duplikat pages/id/ dan pages/en/ -- semua teks konten
+ *      sekarang berupa token {{t.KEY}}, sama seperti navbar/footer)
  *   2. Meresolve directive <!--@include(partials/xxx.html)-->
  *   3. Mengganti placeholder {{TITLE}}, {{DESCRIPTION}}, dst dari page.config.json
- *   4. Mengganti token {{t.KEY}} dengan teks terjemahan dari source/i18n/<locale>.json
- *   5. Mengganti {{LANG_PREFIX}} pada link antar halaman (kosong untuk id, "en/" untuk en)
+ *   4. Mengganti token {{t.KEY}} dengan teks terjemahan, digabung dari:
+ *        - source/i18n/<locale>.json            (teks umum: navbar/footer)
+ *        - source/i18n/pages/<page>.<locale>.json (teks khusus halaman itu)
+ *   5. Mengganti {{LANG_PREFIX}} pada link antar halaman (root-absolute)
  *   6. Menyisipkan script/CSS tambahan per halaman (misal map.js hanya di contact.html)
  *   7. Menandai menu aktif (current-menu-item) otomatis berdasarkan nama halaman
  *   8. Menyisipkan tag hreflang + link language-switcher otomatis
@@ -30,9 +34,11 @@ const path = require("path");
 
 const ROOT = __dirname;
 const PARTIALS_DIR = path.join(ROOT, "source");
+const PAGES_DIR = path.join(ROOT, "source/pages");
 const OUTPUT_DIR = path.join(ROOT, "dist");
 const CONFIG_PATH = path.join(ROOT, "page.config.json");
 const I18N_DIR = path.join(ROOT, "source/i18n");
+const I18N_PAGES_DIR = path.join(ROOT, "source/i18n/pages");
 
 // Folder aset yang tinggal disalin apa adanya ke dist/ (tidak diproses)
 const ASSET_DIRS = ["css", "js", "image", "icons", "scss", "contact"];
@@ -110,6 +116,23 @@ function applyExtraCss(content, extraCss) {
   return content.replace("{{EXTRA_CSS}}", tags);
 }
 
+function loadDict(locale, pageFile) {
+  const commonPath = path.join(I18N_DIR, `${locale}.json`);
+  const common = fs.existsSync(commonPath)
+    ? JSON.parse(fs.readFileSync(commonPath, "utf-8"))
+    : {};
+
+  const pageBaseName = pageFile.replace(/\.html$/, "");
+  const pagePath = path.join(I18N_PAGES_DIR, `${pageBaseName}.${locale}.json`);
+  const pageDict = fs.existsSync(pagePath)
+    ? JSON.parse(fs.readFileSync(pagePath, "utf-8"))
+    : {};
+
+  // page-specific key menang kalau ada nama yang sama (jarang terjadi,
+  // tapi common tetap jadi basis supaya key navbar/footer selalu ada)
+  return { ...common, ...pageDict };
+}
+
 function applyI18n(content, dict) {
   return content.replace(/\{\{t\.([a-zA-Z0-9_]+)\}\}/g, (match, key) => {
     if (!(key in dict)) {
@@ -160,7 +183,7 @@ function markSection(sectionHtml, currentPage, { parentClass, childClass, childL
       lastTopLiIndex = i;
     }
 
-    const hrefMatch = line.match(/href="(?:en\/)?([a-zA-Z0-9_-]+\.html)"/);
+    const hrefMatch = line.match(/href="\/?(?:en\/)?([a-zA-Z0-9_-]+\.html)"/);
     if (hrefMatch && hrefMatch[1] === currentPage) {
       if (childLineRegex.test(line)) {
         lines[i] = addClassToLiLine(line, childClass);
@@ -227,25 +250,21 @@ function copyDir(src, dest) {
 function build() {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
+  if (!fs.existsSync(PAGES_DIR)) {
+    console.error(`! Folder ${PAGES_DIR} tidak ditemukan.`);
+    return;
+  }
+  const pageFiles = fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".html"));
+
   for (const [locale, localeCfg] of Object.entries(LOCALES)) {
-    const pagesDir = path.join(ROOT, "source/pages", locale);
-    if (!fs.existsSync(pagesDir)) {
-      console.warn(`! Folder ${pagesDir} tidak ada, lewati locale "${locale}"`);
-      continue;
-    }
-
-    const i18nPath = path.join(I18N_DIR, `${locale}.json`);
-    const dict = JSON.parse(fs.readFileSync(i18nPath, "utf-8"));
-
     const localeConfig = pageConfig[locale] || {};
     const outDir = path.join(OUTPUT_DIR, localeCfg.dirPrefix);
     fs.mkdirSync(outDir, { recursive: true });
 
-    const pageFiles = fs.readdirSync(pagesDir).filter((f) => f.endsWith(".html"));
-
     for (const file of pageFiles) {
       const meta = localeConfig[file] || {};
-      const raw = fs.readFileSync(path.join(pagesDir, file), "utf-8");
+      const dict = loadDict(locale, file);
+      const raw = fs.readFileSync(path.join(PAGES_DIR, file), "utf-8");
 
       let html = resolveIncludes(raw);
       html = applyPageMeta(html, meta);
