@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="{{HTML_LANG}}">
+
+<head>
+    <meta charset="utf-8" />
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <meta name="author" content="themesflat.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <!--@include(partials/head-links.html)-->
+</head>
+
+<body class="{{BODY_CLASS}}">
+
+    <!--@include(partials/preloader.html)-->
+
+    <div class="wrapper position-relative overflow-x-clip">
+        <div class="mask mask-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" fill="none">
+                <circle cx="400" cy="400" r="325" stroke="url(#a6)" stroke-width="150" />
+                <defs>
+                    <linearGradient id="a6" x1="176" x2="569" y1="70.5" y2="674"  >
+                        <stop offset="0" stop-color="#fff" stop-opacity="0.05" />
+                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="mask mask-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" fill="none">
+                <circle cx="400" cy="400" r="325" stroke="url(#a7)" stroke-width="150" />
+                <defs>
+                    <linearGradient id="a7" x1="176" x2="569" y1="70.5" y2="674"  >
+                        <stop offset="0" stop-color="#fff" stop-opacity="0.05" />
+                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="mask mask-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" fill="none">
+                <circle cx="350" cy="350" r="285" stroke="url(#a8)" stroke-width="130" />
+                <defs>
+                    <linearGradient id="a8" x1="154" x2="497.875" y1="61.688" y2="589.75"  >
+                        <stop offset="0" stop-color="#fff" stop-opacity="0.05" />
+                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        
+
+        <!--@include(partials/topbar.html)-->
+
+        <!--@include(partials/header.html)-->
+
+        <!-- ============ UNIQUE PAGE CONTENT START ============ -->
+        <!-- /.header -->
+
+        <!-- Page-title -->
+
+        <div class="page-title">
+            <div class="tf-container">
+                <div class="page-title-content text-center">
+                    <h1 class="title split-text effect-right">
+                        {{t.sdetail_title}}
+                    </h1>
+                    <div class="breadkcum">
+                        <a href="{{LANG_PREFIX}}index.html" class="link-breadkcum body-2 fw-7 split-text effect-right">{{t.nav_home}}</a>
+                        <span class="dot"></span>
+                        <span class="page-breadkcum body-2 fw-7 split-text effect-right">{{t.sdetail_breadcrumb}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /.page-title -->
+
+        <!-- Main-content -->
+
+        <div class="main-content position-relative">
+            <div class="mask mask-service-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" fill="none">
+                    <circle cx="400" cy="400" r="325" stroke="url(#b6)" stroke-width="150"></circle>
+                    <defs>
+                        <linearGradient id="b6" x1="176" x2="569" y1="70.5" y2="674"  >
+                            <stop offset="0" stop-color="#fff" stop-opacity="0.05"></stop>
+                            <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="tf-container tf-spacing-8">
+                <div class="row">
+                    <div class="col-xl-8">
+                        <button id="filterShop" class="fillter-btn style-fixed d-xl-none">
+                            <i class="icon-sidebar"></i>
+                        </button>
+                        <div class="wg-details wg-service-details">
+                            <div class="image-blog img-1">
+                                <img src="/image/section/service-details-1.jpg" data-src="/image/section/service-details-1.jpg" alt="" class="lazyload">
+                            </div>
+                            <div class="details-content">
+                                <h3 class="title">{{t.sdetail_heading}}</h3>
+                                <div class="desc">
+                                    <p class="lh-30">
+                                        {{t.sdetail_desc1}}
+                                    </p>
+                                    <p class="lh-30">
+                                        {{t.sdetail_desc2}}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="details-content-2">
+                                <h4 class="title">{{t.sdetail_key_services_title}}</h4>
+                                <p class="desc lh-30">
+                                    {{t.sdetail_key_services_desc}}
+                                </p>
+                                <div class="list-features">
+                                    <div class="features-item">
+                                        <div class="number-features fw-7">
+                                            1
+                                        </div>
+                                        <div class="item-content">
+                                            <a href="#" class="body-2 fw-7">{{t.sdetail_feat1_title}}</a>
+                                            <p class="text lh-30">{{t.sdetail_feat1_desc}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="features-item">
+                                        <div class="number-features fw-7">
+                                            2
+                                        </div>
+                                        <div class="item-content">
+                                            <a href="#" class="body-2 fw-7">{{t.sdetail_feat2_title}}</a>
+                                            <p class="text lh-30">{{t.sdetail_feat2_desc}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="features-item">
+                                        <div class="number-features fw-7">
+                                            3
+                                        </div>
+                                        <div class="item-content">
+                                            <a href="#" class="body-2 fw-7">{{t.sdetail_feat3_title}}</a>
+                                            <p class="text lh-30">{{t.sdetail_feat3_desc}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="image-blog img-2">
+                                <img src="/image/section/service-details-2.jpg" data-src="/image/section/service-details-2.jpg" alt="" class="lazyload">
+                                <div class="counter-box">
+                                    <div class="counter-item">
+                                        <div class="counter">
+                                            <div class="number-counter flex fs-65 fw-6">
+                                                <span class="number odometer color-primary" data-to="25" data-inviewport="yes"> 0 </span>
+                                                <span class="color-primary">+</span>
+                                            </div>
+                                            <h5 class="title-counter fw-5">
+                                                {{t.sdetail_counter_label_1}}
+                                                <br>{{t.sdetail_counter_label_2}}
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="details-content-2 mb-56">
+                                <h4 class="title">{{t.sdetail_process_title}}</h4>
+                                <p class="desc lh-30 mb-40">
+                                    {{t.sdetail_process_desc}}
+                                </p>
+                                <div class="list-process flex">
+                                    <div class="process-item">
+                                        <div class="top-item">
+                                            <div class="step-number text-medium">
+                                                {{t.sdetail_step1_label}}
+                                            </div>
+                                            <a href="#" class="body-2 fw-7">{{t.sdetail_step1_title}}</a>
+                                        </div>
+                                        <div class="midder-item">
+                                            <div class="icon">
+                                                <i class="icon-check"></i>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="text lh-30">
+                                            {{t.sdetail_step1_desc}}
+                                        </div>
+                                    </div>
+
+                                    <div class="process-item">
+                                        <div class="top-item">
+                                            <div class="step-number text-medium">
+                                                {{t.sdetail_step2_label}}
+                                            </div>
+                                            <a href="#" class="body-2 fw-7">{{t.sdetail_step2_title}}</a>
+                                        </div>
+                                        <div class="midder-item">
+                                            <div class="icon">
+                                                <i class="icon-check"></i>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="text lh-30">
+                                            {{t.sdetail_step2_desc}}
+                                        </div>
+                                    </div>
+
+                                    <div class="process-item">
+                                        <div class="top-item">
+                                            <div class="step-number text-medium">
+                                                {{t.sdetail_step3_label}}
+                                            </div>
+                                            <a href="#" class="body-2 fw-7">{{t.sdetail_step3_title}}</a>
+                                        </div>
+                                        <div class="midder-item">
+                                            <div class="icon">
+                                                <i class="icon-check"></i>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <div class="text lh-30">
+                                            {{t.sdetail_step3_desc}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="details-content-2 mb-0">
+                                <h4 class="title">{{t.sdetail_faq_title}}</h4>
+                                <p class="desc lh-30 mb-20">
+                                    {{t.sdetail_faq_desc}}
+                                </p>
+                                <div class="wg-according" id="According1">
+                                    <div class="according-item style-2 px-sm-15">
+                                        <a href="#according1" data-bs-toggle="collapse" class="title-according collapsed body-2 fw-5">{{t.sdetail_faq_q1}}<i class="icon-arrow-right"></i></a>
+                                        <div id="according1" class="collapse" data-bs-parent="#According1">
+                                            <div class="according-content">
+                                                <p class="lh-30">{{t.sdetail_faq_answer_shared}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="according-item style-2 px-sm-15">
+                                        <a href="#according2" data-bs-toggle="collapse" class="title-according body-2 fw-5">{{t.sdetail_faq_q2}}<i class="icon-arrow-right"></i></a>
+                                        <div id="according2" class="collapse show" data-bs-parent="#According1">
+                                            <div class="according-content">
+                                                <p class="lh-30">{{t.sdetail_faq_answer_shared}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="according-item style-2 px-sm-15">
+                                        <a href="#according3" data-bs-toggle="collapse" class="title-according collapsed body-2 fw-5">{{t.sdetail_faq_q3}}<i class="icon-arrow-right"></i></a>
+                                        <div id="according3" class="collapse" data-bs-parent="#According1">
+                                            <div class="according-content">
+                                                <p class="lh-30">{{t.sdetail_faq_answer_shared}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="according-item style-2 px-sm-15">
+                                        <a href="#according4" data-bs-toggle="collapse" class="title-according collapsed body-2 fw-5">{{t.sdetail_faq_q4}}<i class="icon-arrow-right"></i></a>
+                                        <div id="according4" class="collapse" data-bs-parent="#According1">
+                                            <div class="according-content">
+                                                <p class="lh-30">{{t.sdetail_faq_answer_shared}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="tf-sidebar sidebar-filter right no-bg">
+
+                            <div class="header-fillter flex justify-content-between align-items-center d-xl-none mb-30">
+                                <h3 class="title">
+                                    {{t.shared_sidebar_filter_title}}
+                                </h3>
+                                <span class="icon-close close-filter"></span>
+                            </div>
+
+                            <div class="sidebar-item sidebar-content sidebar-categories mb-40 bg-dark-2 px-sm-15">
+                                <h5 class="title-content fw-5">
+                                    {{t.sdetail_sidebar_popular_title}}
+                                </h5>
+                                <ul class="list">
+                                    <li class="item">
+                                        <i class="icon-arrow-right"></i>
+                                        <a href="#" class="body-2 fw-5">{{t.shared_sidebar_svc1}}</a>
+                                    </li>
+                                    <li class="item">
+                                        <i class="icon-arrow-right"></i>
+                                        <a href="#" class="body-2 fw-5">{{t.shared_sidebar_svc2}}</a>
+                                    </li>
+                                    <li class="item">
+                                        <i class="icon-arrow-right"></i>
+                                        <a href="#" class="body-2 fw-5">{{t.shared_sidebar_svc3}}</a>
+                                    </li>
+                                    <li class="item">
+                                        <i class="icon-arrow-right"></i>
+                                        <a href="#" class="body-2 fw-5">{{t.shared_sidebar_svc4}}</a>
+                                    </li>
+                                    <li class="item">
+                                        <i class="icon-arrow-right"></i>
+                                        <a href="#" class="body-2 fw-5">{{t.shared_sidebar_svc5}}</a>
+                                    </li>
+                                    <li class="item">
+                                        <i class="icon-arrow-right"></i>
+                                        <a href="#" class="body-2 fw-5">{{t.shared_sidebar_svc6}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="sidebar-item sidebar-content sidebar-contact bg-dark-2 px-sm-15">
+                                <h3 class="title-content fw-5 lh-35">
+                                    {{t.sdetail_form_title_prefix}}
+                                    <br><span class="fw-5"> {{t.sdetail_form_title_suffix}}</span>
+                                </h3>
+                                <form id="contactform" class="form-contact-us sidebar-form" method="post" action="./contact/contact-process.php">
+
+                                    <fieldset class="mb-20">
+                                        <input type="text" name="name" id="name" placeholder="{{t.form_full_name}}" required>
+                                    </fieldset>
+
+                                    <fieldset class="mb-20">
+                                        <input type="email" name="mail" id="mail" placeholder="Email" required>
+                                    </fieldset>
+
+                                    <div class="nice-select mb-20">
+                                        <span class="current caption-1">{{t.sdetail_form_subject}}</span>
+                                        <ul class="list">
+                                            <li class="option option-all selected focus">
+                                                {{t.sdetail_form_subject}}
+                                            </li>
+                                            <li class="option">
+                                                {{t.opt_machine_learning}}
+                                            </li>
+                                            <li class="option">
+                                                {{t.opt_artificial_intelligence}}
+                                            </li>
+                                            <li class="option">
+                                                {{t.opt_augmented_reality}}
+                                            </li>
+                                            <li class="option">
+                                                {{t.opt_software_development}}
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <fieldset class="mb-20">
+                                        <textarea name="message" id="message" placeholder="{{t.form_write_message}}" required></textarea>
+                                    </fieldset>
+
+                                    <button type="submit" class="tf-btn w-full justify-content-center">
+                                        <span> {{t.sdetail_form_submit}}</span>
+                                        <i class="icon-arrow-right"></i>
+                                    </button>
+
+                                </form>
+                            </div>
+
+                            <div class="sidebar-banner box-item">
+                                <div class="box-content px-sm-15">
+                                    <p class="sub-title">
+                                        {{t.btn_get_quote}}
+                                    </p>
+                                    <h4 class="title">{{t.shared_banner_title}}</h4>
+                                    <a href="#" class="tf-btn">
+                                        <span>{{t.shared_banner_btn}}</span>
+                                        <i class="icon-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-prev-details tf-spacing-9">
+                <div class="tf-container">
+                    <div class="row rg-50">
+                        <div class="col-sm-6">
+                            <div class="prev-details next-prev-item">
+                                <a href="{{LANG_PREFIX}}services-details.html" class="link"><i class="icon-arrow-left"></i> {{t.nav_prev}}</a>
+                                <h4 class="title"><a href="{{LANG_PREFIX}}services-details.html">{{t.shared_prev_project_title}}</a></h4>
+                                <a href="{{LANG_PREFIX}}services-details.html" class="image">
+                                    <img src="/image/section/service-details-prev.jpg" data-src="/image/section/service-details-prev.jpg" alt="" class="lazyload">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="next-details next-prev-item">
+                                <a href="{{LANG_PREFIX}}services-details.html" class="link"> {{t.nav_next}} <i class="icon-arrow-right"></i></a>
+                                <h4 class="title"><a href="{{LANG_PREFIX}}services-details.html">{{t.shared_next_project_title}}</a></h4>
+                                <a href="{{LANG_PREFIX}}services-details.html" class="image">
+                                    <img src="/image/section/service-details-next.jpg" data-src="/image/section/service-details-next.jpg" alt="" class="lazyload">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- /.main-content -->
+
+         
+        <!-- ============ UNIQUE PAGE CONTENT END ============== -->
+
+        <!--@include(partials/footer.html)-->
+
+        <!--@include(partials/offcanvas-mobile.html)-->
+
+        <!--@include(partials/offcanvas-megamenu.html)-->
+
+    <!--@include(partials/scripts-common.html)-->
+
+</body>
+
+</html>
