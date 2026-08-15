@@ -1,10 +1,15 @@
 {
   "pr_title": "Products",
-  "pr_ml_title": "Machine Learning",
-  "pr_ml_desc": "Machine learning revolutionizing was way businesses operate by system the learn from data and performance",
-  "pr_ai_title": "Artificial Intelligence",
-  "pr_ai_desc": "Artificial Intelligence is at the forefront technological innovation, transforming industries and driving",
-  "pr_ar_title": "Augmented Reality",
-  "pr_ar_desc": "Augmented Reality is revolutionizing the way interact with digital content by overlaying virtual elements onto",
-  "pr_custom_title": "Custom Software Development"
+  "pr_hrms_title": "Human Resource Management System",
+  "pr_hrms_desc": "An integrated platform for managing employee data, attendance, payroll, and team performance in one efficient system.",
+  "pr_lms_title": "Learning Management System",
+  "pr_lms_desc": "A digital learning solution for managing classes, learning materials, exams, and learner progress in a structured way.",
+  "pr_psikotes_title": "Psychology Test Management System",
+  "pr_psikotes_desc": "A psychometric test management system that supports recruitment, evaluation, and result reporting more accurately.",
+  "pr_pos_title": "Point of Sales",
+  "pr_pos_desc": "A modern cashier application for fast transactions, inventory tracking, sales reporting, and retail operations.",
+  "pr_hms_title": "Hotel Management System",
+  "pr_hms_desc": "A hotel solution that simplifies room booking, reservation management, billing, and guest operations in one platform.",
+  "pr_custom_title": "Web & Mobile Apps Custom",
+  "pr_custom_desc": "Custom web and mobile app development tailored to your business needs, from features to system integrations."
 }

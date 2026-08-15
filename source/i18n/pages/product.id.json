@@ -1,10 +1,15 @@
 {
   "pr_title": "Produk",
-  "pr_ml_title": "Machine Learning",
-  "pr_ml_desc": "Machine learning merevolusi cara bisnis beroperasi lewat sistem yang belajar dari data dan meningkatkan performa secara berkelanjutan",
-  "pr_ai_title": "Kecerdasan Buatan",
-  "pr_ai_desc": "Kecerdasan Buatan berada di garis depan inovasi teknologi, mentransformasi berbagai industri dan mendorong pertumbuhan bisnis",
-  "pr_ar_title": "Augmented Reality",
-  "pr_ar_desc": "Augmented Reality merevolusi cara kita berinteraksi dengan konten digital dengan menghadirkan elemen virtual ke dunia nyata",
-  "pr_custom_title": "Pengembangan Software Kustom"
+  "pr_hrms_title": "Human Resource Management System",
+  "pr_hrms_desc": "Platform terintegrasi untuk mengelola data karyawan, absensi, payroll, dan kinerja tim dalam satu sistem yang efisien.",
+  "pr_lms_title": "Learning Management System",
+  "pr_lms_desc": "Solusi pembelajaran digital untuk mengelola kelas, materi, ujian, dan progres peserta didik secara terstruktur.",
+  "pr_psikotes_title": "Psikotes Management System",
+  "pr_psikotes_desc": "Sistem pengelolaan tes psikologi yang membantu proses rekrutmen, evaluasi, dan laporan hasil dengan lebih akurat.",
+  "pr_pos_title": "Point of Sales",
+  "pr_pos_desc": "Aplikasi kasir modern untuk transaksi cepat, inventori, laporan penjualan, dan pengelolaan operasional toko.",
+  "pr_hms_title": "Hotel Management System",
+  "pr_hms_desc": "Solusi hotel yang memudahkan pemesanan kamar, reservasi, billing, dan pengelolaan tamu dalam satu platform.",
+  "pr_custom_title": "Web & Mobile Apps Custom",
+  "pr_custom_desc": "Pengembangan aplikasi web dan mobile yang disesuaikan dengan kebutuhan bisnis Anda, mulai dari fitur hingga integrasi sistem."
 }
