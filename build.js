@@ -39,6 +39,24 @@ const OUTPUT_DIR = path.join(ROOT, "dist");
 const CONFIG_PATH = path.join(ROOT, "page.config.json");
 const I18N_DIR = path.join(ROOT, "source/i18n");
 const I18N_PAGES_DIR = path.join(ROOT, "source/i18n/pages");
+const ENV_PATH = path.join(ROOT, ".env");
+
+function loadEnv() {
+  const fileEnv = fs.existsSync(ENV_PATH)
+    ? Object.fromEntries(
+        fs.readFileSync(ENV_PATH, "utf-8")
+          .split(/\r?\n/)
+          .map((line) => line.trim())
+          .filter((line) => line && !line.startsWith("#") && line.includes("="))
+          .map((line) => {
+            const separator = line.indexOf("=");
+            return [line.slice(0, separator).trim(), line.slice(separator + 1).trim().replace(/^['"]|['"]$/g, "")];
+          })
+      )
+    : {};
+
+  return { ...fileEnv, ...process.env };
+}
 
 // Folder aset yang tinggal disalin apa adanya ke dist/ (tidak diproses)
 const ASSET_DIRS = ["css", "js", "image", "icons", "scss", "contact"];
@@ -60,6 +78,7 @@ const LOCALES = {
 };
 
 const pageConfig = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf-8"));
+const env = loadEnv();
 
 const EXTRA_SCRIPT_TAGS = {
   "js/jquery.nice-select.min.js": '    <script src="/js/jquery.nice-select.min.js"></script>',
@@ -242,9 +261,32 @@ function copyDir(src, dest) {
     if (entry.isDirectory()) {
       copyDir(s, d);
     } else {
-      fs.copyFileSync(s, d);
+      copyFileAtomic(s, d);
     }
   }
+}
+
+function writeFileAtomic(filePath, content) {
+  const tempPath = `${filePath}.${process.pid}.tmp`;
+  fs.writeFileSync(tempPath, content);
+  fs.renameSync(tempPath, filePath);
+}
+
+function copyFileAtomic(sourcePath, destinationPath) {
+  const tempPath = `${destinationPath}.${process.pid}.tmp`;
+  fs.copyFileSync(sourcePath, tempPath);
+  fs.renameSync(tempPath, destinationPath);
+}
+
+function writeEmailJsConfig() {
+  const config = {
+    publicKey: env.EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY",
+    serviceId: env.EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID",
+    templateId: env.EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID",
+    testRecipient: env.EMAILJS_RECIPIENT || "irvansindy7@gmail.com",
+  };
+  const configPath = path.join(OUTPUT_DIR, "js/contact-config.js");
+  writeFileAtomic(configPath, `window.CONTACT_EMAILJS_CONFIG = ${JSON.stringify(config)};\n`);
 }
 
 function build() {
@@ -275,7 +317,7 @@ function build() {
       html = html.replace("{{HREFLANG_TAGS}}", buildHreflangTags(file));
       html = markActiveMenu(html, file);
 
-      fs.writeFileSync(path.join(outDir, file), html);
+      writeFileAtomic(path.join(outDir, file), html);
       console.log(`✓ Built [${locale}] ${file}`);
     }
   }
@@ -283,6 +325,7 @@ function build() {
   for (const dir of ASSET_DIRS) {
     copyDir(path.join(ROOT, dir), path.join(OUTPUT_DIR, dir));
   }
+  writeEmailJsConfig();
   console.log("✓ Assets copied");
   console.log(
     `\nSelesai. Folder "dist/" berisi versi Indonesia (root) dan English ("dist/en/"). Itu yang di-upload ke hosting.`

@@ -27,6 +27,13 @@
 (function ($) {
     ("use strict");
 
+    window.CONTACT_EMAILJS_CONFIG = window.CONTACT_EMAILJS_CONFIG || {
+        publicKey: "YOUR_PUBLIC_KEY",
+        serviceId: "YOUR_SERVICE_ID",
+        templateId: "YOUR_TEMPLATE_ID",
+        testRecipient: "irvansindy7@gmail.com",
+    };
+
     var headerSticky = function () {
         let lastScrollTop = 0;
         let delta = 5;
@@ -190,46 +197,46 @@
     };
 
     var ajaxContactForm = function () {
-        $("#contactform,#commentform").each(function () {
+        $("#contactform").each(function () {
             $(this).validate({
                 submitHandler: function (form) {
                     var $form = $(form),
-                        str = $form.serialize(),
                         loading = $("<div />", { class: "loading" });
 
-                    $.ajax({
-                        type: "POST",
-                        url: $form.attr("action"),
-                        data: str,
-                        beforeSend: function () {
-                            $form.find(".send-wrap").append(loading);
-                        },
-                        success: function (msg) {
-                            var result, cls;
-                            if (msg === "Success") {
-                                result = "Message Sent Successfully To Email Administrator";
-                                cls = "msg-success";
-                            } else {
-                                result = "Error sending email.";
-                                cls = "msg-error";
-                            }
+                    if (typeof toastr === "undefined") {
+                        window.alert("Notifikasi tidak dapat dimuat. Silakan coba lagi.");
+                        return false;
+                    }
 
-                            $form.prepend(
-                                $("<div />", {
-                                    class: "flat-alert mb-20 " + cls,
-                                    text: result,
-                                }).append(
-                                    $(
-                                        '<a class="close mt-0" href="#"><i class="fa fa-close"></i></a>'
-                                    )
-                                )
-                            );
+                    if (typeof emailjs === "undefined" ||
+                        !window.CONTACT_EMAILJS_CONFIG ||
+                        window.CONTACT_EMAILJS_CONFIG.publicKey === "YOUR_PUBLIC_KEY" ||
+                        window.CONTACT_EMAILJS_CONFIG.serviceId === "YOUR_SERVICE_ID" ||
+                        window.CONTACT_EMAILJS_CONFIG.templateId === "YOUR_TEMPLATE_ID") {
+                        toastr.error("Email service belum dikonfigurasi.", "Gagal mengirim");
+                        return false;
+                    }
 
-                            $form.find(":input").not(".submit").val("");
-                        },
-                        complete: function (xhr, status, error_thrown) {
-                            $form.find(".loading").remove();
-                        },
+                    emailjs.init({ publicKey: window.CONTACT_EMAILJS_CONFIG.publicKey });
+                    $form.find(".send-wrap").append(loading);
+                    $form.find(":input[type=submit]").prop("disabled", true);
+
+                    var formData = Object.fromEntries(new FormData(form).entries());
+                    formData.to_email = window.CONTACT_EMAILJS_CONFIG.testRecipient;
+                    formData.email = formData.mail || "";
+
+                    emailjs.send(
+                        window.CONTACT_EMAILJS_CONFIG.serviceId,
+                        window.CONTACT_EMAILJS_CONFIG.templateId,
+                        formData
+                    ).then(function () {
+                        toastr.success("Pesan berhasil dikirim.", "Berhasil");
+                        $form.find(":input").not(".submit").not("[name=website]").val("");
+                    }).catch(function () {
+                        toastr.error("Pesan gagal dikirim. Silakan coba lagi.", "Gagal mengirim");
+                    }).finally(function () {
+                        $form.find(".loading").remove();
+                        $form.find(":input[type=submit]").prop("disabled", false);
                     });
                 },
             });

@@ -27,7 +27,7 @@ const path = require("path");
 const { execFileSync } = require("child_process");
 
 const WATCH_DIRS = ["source", "css", "js", "image", "icons", "scss", "contact"];
-const WATCH_FILES = ["build.js", "page.config.json"];
+const WATCH_FILES = ["build.js", "page.config.json", ".env"];
 const DEBOUNCE_MS = 250;
 
 let isBuilding = false;

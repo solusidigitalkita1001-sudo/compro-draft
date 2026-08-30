@@ -3,6 +3,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        EMAILJS_PUBLIC_KEY: ${EMAILJS_PUBLIC_KEY}
+        EMAILJS_SERVICE_ID: ${EMAILJS_SERVICE_ID}
+        EMAILJS_TEMPLATE_ID: ${EMAILJS_TEMPLATE_ID}
+        EMAILJS_RECIPIENT: ${EMAILJS_RECIPIENT}
     container_name: sdk-web
     restart: unless-stopped
 
