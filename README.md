@@ -210,7 +210,7 @@ File yang disediakan:
 docker compose -f docker-compose.standalone.yml up -d --build
 ```
 
-Buka `http://localhost:8080` (Indonesia) dan `http://localhost:8080/en/`
+Buka `http://localhost:8083` (Indonesia) dan `http://localhost:8083/en/`
 (English). Kalau sudah oke, `docker compose -f docker-compose.standalone.yml down`.
 
 ### Deploy di VPS (di belakang nginx reverse proxy yang sudah ada)

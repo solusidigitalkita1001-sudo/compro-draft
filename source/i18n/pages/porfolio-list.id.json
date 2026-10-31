@@ -1,3 +1,21 @@
 {
-  "plist_title": "Daftar Proyek"
+  "plist_title": "Portofolio Kami",
+  "plist_item1_category": "Otomasi Sumber Daya Manusia",
+  "plist_item1_title": "Human Resource Management System",
+  "plist_item1_desc": "Platform HR terintegrasi untuk menyederhanakan data karyawan, absensi, cuti, payroll, penilaian kinerja, dan pelaporan dalam satu alur kerja.",
+  "plist_item2_category": "Teknologi Pendidikan",
+  "plist_item2_title": "Learning Management System",
+  "plist_item2_desc": "Ekosistem pembelajaran digital untuk mengelola kelas, materi, ujian, sertifikat, dan perkembangan peserta secara terstruktur dan mudah dipantau.",
+  "plist_item3_category": "Teknologi Rekrutmen",
+  "plist_item3_title": "Psikotes Management System",
+  "plist_item3_desc": "Sistem psikotes daring yang memudahkan penjadwalan, pelaksanaan tes, penilaian otomatis, serta penyajian laporan kandidat yang konsisten.",
+  "plist_item4_category": "Teknologi Retail",
+  "plist_item4_title": "Point of Sales",
+  "plist_item4_desc": "Aplikasi kasir modern untuk mempercepat transaksi, menyinkronkan inventori, mengelola banyak outlet, dan membaca performa penjualan secara real time.",
+  "plist_item5_category": "Teknologi Hospitality",
+  "plist_item5_title": "Hotel Management System",
+  "plist_item5_desc": "Platform operasional hotel yang menyatukan reservasi, ketersediaan kamar, data tamu, billing, housekeeping, dan laporan harian.",
+  "plist_item6_category": "Pengembangan Software Custom",
+  "plist_item6_title": "Web & Mobile Apps Custom",
+  "plist_item6_desc": "Solusi web dan mobile yang dirancang dari kebutuhan bisnis, dilengkapi antarmuka intuitif, integrasi sistem, dan arsitektur yang siap berkembang."
 }

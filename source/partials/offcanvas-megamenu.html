@@ -1,35 +1,23 @@
 <div class="offcanvas offcanvas-end offcanvasMegamenu" id="canvnasMegamenu">
             <div class="heading flex justify-content-between">
                 <div class="logo-megamenu">
-                    <img src="/image/logo/logo.svg" alt="">
+                    <!--@include(partials/brand-logo.html)-->
                 </div>
                 <a class="tf-close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
                     <i class="icon-close"></i>
                 </a>
             </div>
             <div class="desc lh-30">
-                We provide comprehensive IT services, including web design, software development, and technology solutions to help businesses with digital transformation, operational efficiency, and sustainable growth.
+                {{t.sidebar_desc}}
             </div>
 
             <div class="contact-mega-menu meag-menu-item">
                 <ul class="contact-list-mega-menu">
                     <li>
-                        <p class="lh-30">Address:
-                            <a href="#" target="_blank">
-                                70 Washington Square South, New York, NY 10012, United States
-                            </a>
-                        </p>
-                    </li>
-                    <li>
                         <p class="lh-30">Email:
-                            <a href="mailto:example@gmail.com">
-                                example@gmail.com
+                            <a href="mailto:support@nalara.digital">
+                                support@nalara.digital
                             </a>
-                        </p>
-                    </li>
-                    <li>
-                        <p class="lh-30"> Call: <a href="tel:+00012345688">
-                                +000 (123) 456 88</a>
                         </p>
                     </li>
                 </ul>
@@ -37,63 +25,63 @@
 
             <div class="megamenu-subscribe">
                 <h5 class="title-content">
-                    Newsletter Subscribe
+                    {{t.sidebar_quick_links}}
                 </h5>
-                <form class="form-newsletter2 subscribe-form" accept-charset="utf-8" data-mailchimp="true">
-                    <input type="email" name="email-form" class="subscribe-email" placeholder="Email address" tabindex="0" aria-required="true" required="">
-                    <button class="subscribe-button tf-btn-newsletter">
-                        <i class="icon-send"></i>
-                    </button>
-                </form>
+                <ul class="contact-list-mega-menu">
+                    <li><a href="{{LANG_PREFIX}}product.html">{{t.nav_product}}</a></li>
+                    <li><a href="{{LANG_PREFIX}}contact.html">{{t.nav_contact}}</a></li>
+                </ul>
             </div>
 
+            <!-- Featured portfolio projects are temporarily hidden until client case studies are available.
             <div class="megamenu-recent">
                 <h4 class="title-content">
-                    Recent News
+                    {{t.sidebar_featured_projects}}
                 </h4>
                 <div class="tf-post-list style-small hover-img">
-                    <a href="{{LANG_PREFIX}}blog-details.html" class="image">
-                        <img src="/image/blog/post-list-1.jpg" data-src="/image/blog/post-list-1.jpg" alt="" class=" ls-is-cached lazyloaded">
+                    <a href="{{LANG_PREFIX}}porfolio-details.html" class="image">
+                        <img src="/image/project-item/project-item-2.jpg" data-src="/image/project-item/project-item-2.jpg" alt="{{t.portfolio_hrms_short}}" class="ls-is-cached lazyloaded">
                     </a>
                     <div class="post-content">
                         <div class="post-date">
-                            <i class="icon-email"></i>
-                            <span>Dec 12, 2025</span>
+                            <i class="icon-star-of-life"></i>
+                            <span>{{t.sidebar_case_study}}</span>
                         </div>
-                        <a href="#" class="body-2">
-                            Tips For Conducting Studie
+                        <a href="{{LANG_PREFIX}}porfolio-details.html" class="body-2">
+                            {{t.portfolio_hrms_short}}
                         </a>
                     </div>
                 </div>
                 <div class="tf-post-list style-small hover-img">
-                    <a href="{{LANG_PREFIX}}blog-details.html" class="image">
-                        <img src="/image/blog/post-list-2.jpg" data-src="/image/blog/post-list-2.jpg" alt="" class=" ls-is-cached lazyloaded">
+                    <a href="{{LANG_PREFIX}}porfolio-details.html?project=pos" class="image">
+                        <img src="/image/project-item/project-item-5.jpg" data-src="/image/project-item/project-item-5.jpg" alt="{{t.portfolio_pos_short}}" class="ls-is-cached lazyloaded">
                     </a>
                     <div class="post-content">
                         <div class="post-date">
-                            <i class="icon-email"></i>
-                            <span>Dec 12, 2025</span>
+                            <i class="icon-star-of-life"></i>
+                            <span>{{t.sidebar_case_study}}</span>
                         </div>
-                        <a href="#" class="body-2">
-                            Usability With Participants
+                        <a href="{{LANG_PREFIX}}porfolio-details.html?project=pos" class="body-2">
+                            {{t.portfolio_pos_short}}
                         </a>
                     </div>
                 </div>
                 <div class="tf-post-list style-small hover-img">
-                    <a href="{{LANG_PREFIX}}blog-details.html" class="image">
-                        <img src="/image/blog/post-list-3.jpg" data-src="/image/blog/post-list-3.jpg" alt="" class=" ls-is-cached lazyloaded">
+                    <a href="{{LANG_PREFIX}}porfolio-details.html?project=custom" class="image">
+                        <img src="/image/project-item/project-item-7.jpg" data-src="/image/project-item/project-item-7.jpg" alt="{{t.portfolio_custom_short}}" class="ls-is-cached lazyloaded">
                     </a>
                     <div class="post-content">
                         <div class="post-date">
-                            <i class="icon-email"></i>
-                            <span>Dec 12, 2025</span>
+                            <i class="icon-star-of-life"></i>
+                            <span>{{t.sidebar_case_study}}</span>
                         </div>
-                        <a href="#" class="body-2">
-                            Online Environment Work
+                        <a href="{{LANG_PREFIX}}porfolio-details.html?project=custom" class="body-2">
+                            {{t.portfolio_custom_short}}
                         </a>
                     </div>
                 </div>
             </div>
+            -->
 
         </div>
         <!-- /.offcanvasMegamenu -->

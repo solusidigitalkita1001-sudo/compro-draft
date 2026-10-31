@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>{{TITLE}}</title>
-    <meta name="description" content="{{DESCRIPTION}}">
-    <meta name="keywords" content="{{KEYWORDS}}">
-    <meta name="author" content="themesflat.com" />
+    <title>Nalara Karya Indonesia</title>
+    <meta name="description" content="Nalara Karya Indonesia">
+    <meta name="author" content="Nalara Karya Indonesia" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <!--@include(partials/head-links.html)-->
 </head>
@@ -63,14 +62,9 @@
         <div class="page-title">
             <div class="tf-container">
                 <div class="page-title-content text-center">
-                    <h1 class="title split-text effect-right">
-                        {{t.pdetail_title}}
+                    <h1 class="title split-text effect-right" data-portfolio-field="title">
+                        {{t.pdetail_hrms_title}}
                     </h1>
-                    <div class="breadkcum">
-                        <a href="{{LANG_PREFIX}}index.html" class="link-breadkcum body-2 fw-7 split-text effect-right">{{t.nav_home}}</a>
-                        <span class="dot"></span>
-                        <span class="page-breadkcum body-2 fw-7 split-text effect-right"> {{t.pdetail_breadcrumb}}</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -84,59 +78,57 @@
             <div class="tf-container">
                 <div class="wg-details wg-project-details tf-spacing-2">
                     <div class="image-blog img-1">
-                        <img src="/image/section/project-details-1.jpg" data-src="/image/section/project-details-1.jpg" alt="" class="lazyload">
+                        <img src="/image/project-item/project-item-2.jpg" data-src="/image/project-item/project-item-2.jpg" alt="{{t.pdetail_hrms_title}}" class="lazyload" data-portfolio-image>
                     </div>
                     <div class="details-content flex justify-content-between g-30 rg-50">
                         <div class="left">
-                            <h3 class="title">{{t.pdetail_heading}}</h3>
+                            <h3 class="title" data-portfolio-field="heading">{{t.pdetail_hrms_heading}}</h3>
                             <div class="desc">
                                 <div class="desc-flex flex g-20">
-                                    <span class="frame-item fw-7 fs-27">
-                                        S
-                                    </span>
-                                    <span class="lh-30">
-                                        {{t.pdetail_intro}}
+                                    <span class="frame-item fw-7 fs-27" data-portfolio-initial>H</span>
+                                    <span class="lh-30" data-portfolio-field="intro">
+                                        {{t.pdetail_hrms_intro}}
                                     </span>
                                 </div>
-                                <p class="lh-30">
-                                    {{t.pdetail_desc}}
+                                <p class="lh-30" data-portfolio-field="description">
+                                    {{t.pdetail_hrms_description}}
                                 </p>
                             </div>
                             <div class="cols">
                                 <div class="list-benefit">
                                     <div class="benefit-item">
                                         <i class="icon-check"></i>
-                                        <span class="lh-30 body-2">{{t.pdetail_benefit1}}</span>
+                                        <span class="lh-30 body-2" data-portfolio-field="benefit1">{{t.pdetail_hrms_benefit1}}</span>
                                     </div>
                                     <div class="benefit-item">
                                         <i class="icon-check"></i>
-                                        <span class="lh-30 body-2">{{t.pdetail_benefit2}}</span>
+                                        <span class="lh-30 body-2" data-portfolio-field="benefit2">{{t.pdetail_hrms_benefit2}}</span>
                                     </div>
                                     <div class="benefit-item">
                                         <i class="icon-check"></i>
-                                        <span class="lh-30 body-2">{{t.pdetail_benefit3}}</span>
+                                        <span class="lh-30 body-2" data-portfolio-field="benefit3">{{t.pdetail_hrms_benefit3}}</span>
                                     </div>
                                     <div class="benefit-item">
                                         <i class="icon-check"></i>
-                                        <span class="lh-30 body-2">{{t.pdetail_benefit4}}</span>
+                                        <span class="lh-30 body-2" data-portfolio-field="benefit4">{{t.pdetail_hrms_benefit4}}</span>
                                     </div>
                                 </div>
                                 <div class="list-benefit">
                                     <div class="benefit-item">
                                         <i class="icon-check"></i>
-                                        <span class="lh-30 body-2">{{t.pdetail_benefit5}}</span>
+                                        <span class="lh-30 body-2" data-portfolio-field="benefit5">{{t.pdetail_hrms_benefit5}}</span>
                                     </div>
                                     <div class="benefit-item">
                                         <i class="icon-check"></i>
-                                        <span class="lh-30 body-2">{{t.pdetail_benefit6}}</span>
+                                        <span class="lh-30 body-2" data-portfolio-field="benefit6">{{t.pdetail_hrms_benefit6}}</span>
                                     </div>
                                     <div class="benefit-item">
                                         <i class="icon-check"></i>
-                                        <span class="lh-30 body-2">{{t.pdetail_benefit7}}</span>
+                                        <span class="lh-30 body-2" data-portfolio-field="benefit7">{{t.pdetail_hrms_benefit7}}</span>
                                     </div>
                                     <div class="benefit-item">
                                         <i class="icon-check"></i>
-                                        <span class="lh-30 body-2">{{t.pdetail_benefit8}}</span>
+                                        <span class="lh-30 body-2" data-portfolio-field="benefit8">{{t.pdetail_hrms_benefit8}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -148,31 +140,31 @@
                                         {{t.pdetail_info_category_label}}
                                     </div>
                                     <h5 class="title-info fw-5">
-                                        {{t.pdetail_info_category_value}}
+                                        <span data-portfolio-field="category">{{t.pdetail_hrms_category}}</span>
                                     </h5>
                                 </div>
                                 <div class="info-item">
                                     <div class="sub-title fw-5">
-                                        {{t.pdetail_info_clients_label}}
+                                        {{t.pdetail_info_platform_label}}
                                     </div>
                                     <h5 class="title-info fw-5">
-                                        {{t.pdetail_info_clients_value}}
+                                        <span data-portfolio-field="platform">{{t.pdetail_hrms_platform}}</span>
                                     </h5>
                                 </div>
                                 <div class="info-item">
                                     <div class="sub-title fw-5">
-                                        {{t.pdetail_info_location_label}}
+                                        {{t.pdetail_info_focus_label}}
                                     </div>
                                     <h5 class="title-info fw-5">
-                                        {{t.pdetail_info_location_value}}
+                                        <span data-portfolio-field="focus">{{t.pdetail_hrms_focus}}</span>
                                     </h5>
                                 </div>
                                 <div class="info-item">
                                     <div class="sub-title fw-5">
-                                        {{t.pdetail_info_published_label}}
+                                        {{t.pdetail_info_status_label}}
                                     </div>
                                     <h5 class="title-info fw-5">
-                                        {{t.pdetail_info_published_value}}
+                                        <span data-portfolio-field="status">{{t.pdetail_hrms_status}}</span>
                                     </h5>
                                 </div>
                             </div>
@@ -180,20 +172,20 @@
                     </div>
                     <div class="list-img grid-3 flex flex-wrap mb-50">
                         <div class="image flex-grow-1">
-                            <img src="/image/section/project-details-2.jpg" data-src="/image/section/project-details-2.jpg" alt="" class="lazyload">
+                            <img src="/image/section/project-details-2.jpg" data-src="/image/section/project-details-2.jpg" alt="{{t.pdetail_gallery_alt}}" class="lazyload">
                         </div>
                         <div class="image flex-grow-1">
-                            <img src="/image/section/project-details-3.jpg" data-src="/image/section/project-details-3.jpg" alt="" class="lazyload">
+                            <img src="/image/section/project-details-3.jpg" data-src="/image/section/project-details-3.jpg" alt="{{t.pdetail_gallery_alt}}" class="lazyload">
                         </div>
                         <div class="image flex-grow-1">
-                            <img src="/image/section/project-details-4.jpg" data-src="/image/section/project-details-4.jpg" alt="" class="lazyload">
+                            <img src="/image/section/project-details-4.jpg" data-src="/image/section/project-details-4.jpg" alt="{{t.pdetail_gallery_alt}}" class="lazyload">
                         </div>
                     </div>
                     <div class="details-content content-2">
                         <h3 class="title mb-25">{{t.pdetail_summary_title}}</h3>
                         <div class="desc">
                             <p class="lh-30">
-                                {{t.pdetail_summary_desc}}
+                                <span data-portfolio-field="summary">{{t.pdetail_hrms_summary}}</span>
                             </p>
                         </div>
                     </div>
@@ -202,9 +194,9 @@
                         <div class="left tags flex g-20 align-items-center">
                             <span class="fw-5">{{t.shared_tags_label}}</span>
                             <div class="tabs-list">
-                                <a href="#" class="tabs-item fw-5">{{t.shared_tag_design}}</a>
-                                <a href="#" class="tabs-item fw-5">{{t.shared_tag_figma}}</a>
-                                <a href="#" class="tabs-item fw-5">{{t.shared_tag_apps}}</a>
+                                <a href="{{LANG_PREFIX}}porfolio-list.html" class="tabs-item fw-5" data-portfolio-field="tag1">{{t.pdetail_hrms_tag1}}</a>
+                                <a href="{{LANG_PREFIX}}porfolio-list.html" class="tabs-item fw-5" data-portfolio-field="tag2">{{t.pdetail_hrms_tag2}}</a>
+                                <a href="{{LANG_PREFIX}}porfolio-list.html" class="tabs-item fw-5" data-portfolio-field="tag3">{{t.pdetail_hrms_tag3}}</a>
                             </div>
                         </div>
                         <div class="right social flex g-20 align-items-center">
@@ -225,19 +217,19 @@
                     <div class="row rg-50">
                         <div class="col-sm-6">
                             <div class="prev-details next-prev-item">
-                                <a href="{{LANG_PREFIX}}porfolio-details.html" class="link"><i class="icon-arrow-left"></i> {{t.nav_prev}}</a>
-                                <h4 class="title"><a href="{{LANG_PREFIX}}porfolio-details.html">{{t.shared_prev_project_title}}</a></h4>
-                                <a href="{{LANG_PREFIX}}porfolio-details.html" class="image">
-                                    <img src="/image/section/service-details-prev.jpg" data-src="/image/section/service-details-prev.jpg" alt="" class=" ls-is-cached lazyloaded">
+                                <a href="{{LANG_PREFIX}}porfolio-details.html?project=custom" class="link" data-portfolio-prev-link><i class="icon-arrow-left"></i> {{t.nav_prev}}</a>
+                                <h4 class="title"><a href="{{LANG_PREFIX}}porfolio-details.html?project=custom" data-portfolio-prev-link data-portfolio-prev-title>{{t.pdetail_custom_title}}</a></h4>
+                                <a href="{{LANG_PREFIX}}porfolio-details.html?project=custom" class="image" data-portfolio-prev-link>
+                                    <img src="/image/project-item/project-item-7.jpg" data-src="/image/project-item/project-item-7.jpg" alt="{{t.pdetail_custom_title}}" class="ls-is-cached lazyloaded" data-portfolio-prev-image>
                                 </a>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="next-details next-prev-item">
-                                <a href="{{LANG_PREFIX}}porfolio-details.html" class="link"> {{t.nav_next}} <i class="icon-arrow-right"></i></a>
-                                <h4 class="title"><a href="{{LANG_PREFIX}}porfolio-details.html">{{t.shared_next_project_title}}</a></h4>
-                                <a href="{{LANG_PREFIX}}porfolio-details.html" class="image">
-                                    <img src="/image/section/service-details-next.jpg" data-src="/image/section/service-details-next.jpg" alt="" class=" ls-is-cached lazyloaded">
+                                <a href="{{LANG_PREFIX}}porfolio-details.html?project=lms" class="link" data-portfolio-next-link> {{t.nav_next}} <i class="icon-arrow-right"></i></a>
+                                <h4 class="title"><a href="{{LANG_PREFIX}}porfolio-details.html?project=lms" data-portfolio-next-link data-portfolio-next-title>{{t.pdetail_lms_title}}</a></h4>
+                                <a href="{{LANG_PREFIX}}porfolio-details.html?project=lms" class="image" data-portfolio-next-link>
+                                    <img src="/image/project-item/project-item-3.jpg" data-src="/image/project-item/project-item-3.jpg" alt="{{t.pdetail_lms_title}}" class="ls-is-cached lazyloaded" data-portfolio-next-image>
                                 </a>
                             </div>
                         </div>
@@ -249,6 +241,211 @@
         </div>
 
         <!-- /.main-content -->
+
+        <div id="portfolio-project-data" hidden aria-hidden="true">
+            <article data-project="hrms" data-image="/image/project-item/project-item-2.jpg">
+                <span data-value="title">{{t.pdetail_hrms_title}}</span>
+                <span data-value="heading">{{t.pdetail_hrms_heading}}</span>
+                <span data-value="intro">{{t.pdetail_hrms_intro}}</span>
+                <span data-value="description">{{t.pdetail_hrms_description}}</span>
+                <span data-value="benefit1">{{t.pdetail_hrms_benefit1}}</span>
+                <span data-value="benefit2">{{t.pdetail_hrms_benefit2}}</span>
+                <span data-value="benefit3">{{t.pdetail_hrms_benefit3}}</span>
+                <span data-value="benefit4">{{t.pdetail_hrms_benefit4}}</span>
+                <span data-value="benefit5">{{t.pdetail_hrms_benefit5}}</span>
+                <span data-value="benefit6">{{t.pdetail_hrms_benefit6}}</span>
+                <span data-value="benefit7">{{t.pdetail_hrms_benefit7}}</span>
+                <span data-value="benefit8">{{t.pdetail_hrms_benefit8}}</span>
+                <span data-value="category">{{t.pdetail_hrms_category}}</span>
+                <span data-value="platform">{{t.pdetail_hrms_platform}}</span>
+                <span data-value="focus">{{t.pdetail_hrms_focus}}</span>
+                <span data-value="status">{{t.pdetail_hrms_status}}</span>
+                <span data-value="summary">{{t.pdetail_hrms_summary}}</span>
+                <span data-value="tag1">{{t.pdetail_hrms_tag1}}</span>
+                <span data-value="tag2">{{t.pdetail_hrms_tag2}}</span>
+                <span data-value="tag3">{{t.pdetail_hrms_tag3}}</span>
+            </article>
+            <article data-project="lms" data-image="/image/project-item/project-item-3.jpg">
+                <span data-value="title">{{t.pdetail_lms_title}}</span>
+                <span data-value="heading">{{t.pdetail_lms_heading}}</span>
+                <span data-value="intro">{{t.pdetail_lms_intro}}</span>
+                <span data-value="description">{{t.pdetail_lms_description}}</span>
+                <span data-value="benefit1">{{t.pdetail_lms_benefit1}}</span>
+                <span data-value="benefit2">{{t.pdetail_lms_benefit2}}</span>
+                <span data-value="benefit3">{{t.pdetail_lms_benefit3}}</span>
+                <span data-value="benefit4">{{t.pdetail_lms_benefit4}}</span>
+                <span data-value="benefit5">{{t.pdetail_lms_benefit5}}</span>
+                <span data-value="benefit6">{{t.pdetail_lms_benefit6}}</span>
+                <span data-value="benefit7">{{t.pdetail_lms_benefit7}}</span>
+                <span data-value="benefit8">{{t.pdetail_lms_benefit8}}</span>
+                <span data-value="category">{{t.pdetail_lms_category}}</span>
+                <span data-value="platform">{{t.pdetail_lms_platform}}</span>
+                <span data-value="focus">{{t.pdetail_lms_focus}}</span>
+                <span data-value="status">{{t.pdetail_lms_status}}</span>
+                <span data-value="summary">{{t.pdetail_lms_summary}}</span>
+                <span data-value="tag1">{{t.pdetail_lms_tag1}}</span>
+                <span data-value="tag2">{{t.pdetail_lms_tag2}}</span>
+                <span data-value="tag3">{{t.pdetail_lms_tag3}}</span>
+            </article>
+            <article data-project="psikotes" data-image="/image/project-item/project-item-4.jpg">
+                <span data-value="title">{{t.pdetail_psikotes_title}}</span>
+                <span data-value="heading">{{t.pdetail_psikotes_heading}}</span>
+                <span data-value="intro">{{t.pdetail_psikotes_intro}}</span>
+                <span data-value="description">{{t.pdetail_psikotes_description}}</span>
+                <span data-value="benefit1">{{t.pdetail_psikotes_benefit1}}</span>
+                <span data-value="benefit2">{{t.pdetail_psikotes_benefit2}}</span>
+                <span data-value="benefit3">{{t.pdetail_psikotes_benefit3}}</span>
+                <span data-value="benefit4">{{t.pdetail_psikotes_benefit4}}</span>
+                <span data-value="benefit5">{{t.pdetail_psikotes_benefit5}}</span>
+                <span data-value="benefit6">{{t.pdetail_psikotes_benefit6}}</span>
+                <span data-value="benefit7">{{t.pdetail_psikotes_benefit7}}</span>
+                <span data-value="benefit8">{{t.pdetail_psikotes_benefit8}}</span>
+                <span data-value="category">{{t.pdetail_psikotes_category}}</span>
+                <span data-value="platform">{{t.pdetail_psikotes_platform}}</span>
+                <span data-value="focus">{{t.pdetail_psikotes_focus}}</span>
+                <span data-value="status">{{t.pdetail_psikotes_status}}</span>
+                <span data-value="summary">{{t.pdetail_psikotes_summary}}</span>
+                <span data-value="tag1">{{t.pdetail_psikotes_tag1}}</span>
+                <span data-value="tag2">{{t.pdetail_psikotes_tag2}}</span>
+                <span data-value="tag3">{{t.pdetail_psikotes_tag3}}</span>
+            </article>
+            <article data-project="pos" data-image="/image/project-item/project-item-5.jpg">
+                <span data-value="title">{{t.pdetail_pos_title}}</span>
+                <span data-value="heading">{{t.pdetail_pos_heading}}</span>
+                <span data-value="intro">{{t.pdetail_pos_intro}}</span>
+                <span data-value="description">{{t.pdetail_pos_description}}</span>
+                <span data-value="benefit1">{{t.pdetail_pos_benefit1}}</span>
+                <span data-value="benefit2">{{t.pdetail_pos_benefit2}}</span>
+                <span data-value="benefit3">{{t.pdetail_pos_benefit3}}</span>
+                <span data-value="benefit4">{{t.pdetail_pos_benefit4}}</span>
+                <span data-value="benefit5">{{t.pdetail_pos_benefit5}}</span>
+                <span data-value="benefit6">{{t.pdetail_pos_benefit6}}</span>
+                <span data-value="benefit7">{{t.pdetail_pos_benefit7}}</span>
+                <span data-value="benefit8">{{t.pdetail_pos_benefit8}}</span>
+                <span data-value="category">{{t.pdetail_pos_category}}</span>
+                <span data-value="platform">{{t.pdetail_pos_platform}}</span>
+                <span data-value="focus">{{t.pdetail_pos_focus}}</span>
+                <span data-value="status">{{t.pdetail_pos_status}}</span>
+                <span data-value="summary">{{t.pdetail_pos_summary}}</span>
+                <span data-value="tag1">{{t.pdetail_pos_tag1}}</span>
+                <span data-value="tag2">{{t.pdetail_pos_tag2}}</span>
+                <span data-value="tag3">{{t.pdetail_pos_tag3}}</span>
+            </article>
+            <article data-project="hms" data-image="/image/project-item/project-item-6.jpg">
+                <span data-value="title">{{t.pdetail_hms_title}}</span>
+                <span data-value="heading">{{t.pdetail_hms_heading}}</span>
+                <span data-value="intro">{{t.pdetail_hms_intro}}</span>
+                <span data-value="description">{{t.pdetail_hms_description}}</span>
+                <span data-value="benefit1">{{t.pdetail_hms_benefit1}}</span>
+                <span data-value="benefit2">{{t.pdetail_hms_benefit2}}</span>
+                <span data-value="benefit3">{{t.pdetail_hms_benefit3}}</span>
+                <span data-value="benefit4">{{t.pdetail_hms_benefit4}}</span>
+                <span data-value="benefit5">{{t.pdetail_hms_benefit5}}</span>
+                <span data-value="benefit6">{{t.pdetail_hms_benefit6}}</span>
+                <span data-value="benefit7">{{t.pdetail_hms_benefit7}}</span>
+                <span data-value="benefit8">{{t.pdetail_hms_benefit8}}</span>
+                <span data-value="category">{{t.pdetail_hms_category}}</span>
+                <span data-value="platform">{{t.pdetail_hms_platform}}</span>
+                <span data-value="focus">{{t.pdetail_hms_focus}}</span>
+                <span data-value="status">{{t.pdetail_hms_status}}</span>
+                <span data-value="summary">{{t.pdetail_hms_summary}}</span>
+                <span data-value="tag1">{{t.pdetail_hms_tag1}}</span>
+                <span data-value="tag2">{{t.pdetail_hms_tag2}}</span>
+                <span data-value="tag3">{{t.pdetail_hms_tag3}}</span>
+            </article>
+            <article data-project="custom" data-image="/image/project-item/project-item-7.jpg">
+                <span data-value="title">{{t.pdetail_custom_title}}</span>
+                <span data-value="heading">{{t.pdetail_custom_heading}}</span>
+                <span data-value="intro">{{t.pdetail_custom_intro}}</span>
+                <span data-value="description">{{t.pdetail_custom_description}}</span>
+                <span data-value="benefit1">{{t.pdetail_custom_benefit1}}</span>
+                <span data-value="benefit2">{{t.pdetail_custom_benefit2}}</span>
+                <span data-value="benefit3">{{t.pdetail_custom_benefit3}}</span>
+                <span data-value="benefit4">{{t.pdetail_custom_benefit4}}</span>
+                <span data-value="benefit5">{{t.pdetail_custom_benefit5}}</span>
+                <span data-value="benefit6">{{t.pdetail_custom_benefit6}}</span>
+                <span data-value="benefit7">{{t.pdetail_custom_benefit7}}</span>
+                <span data-value="benefit8">{{t.pdetail_custom_benefit8}}</span>
+                <span data-value="category">{{t.pdetail_custom_category}}</span>
+                <span data-value="platform">{{t.pdetail_custom_platform}}</span>
+                <span data-value="focus">{{t.pdetail_custom_focus}}</span>
+                <span data-value="status">{{t.pdetail_custom_status}}</span>
+                <span data-value="summary">{{t.pdetail_custom_summary}}</span>
+                <span data-value="tag1">{{t.pdetail_custom_tag1}}</span>
+                <span data-value="tag2">{{t.pdetail_custom_tag2}}</span>
+                <span data-value="tag3">{{t.pdetail_custom_tag3}}</span>
+            </article>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const projectOrder = ["hrms", "lms", "psikotes", "pos", "hms", "custom"];
+                const params = new URLSearchParams(window.location.search);
+                const requestedProject = params.get("project");
+                const projectKey = projectOrder.includes(requestedProject) ? requestedProject : projectOrder[0];
+                const projectEntries = [...document.querySelectorAll("#portfolio-project-data [data-project]")];
+                const projects = Object.fromEntries(projectEntries.map((entry) => [entry.dataset.project, entry]));
+                const currentEntry = projects[projectKey];
+                const values = Object.fromEntries(
+                    [...currentEntry.querySelectorAll("[data-value]")].map((item) => [item.dataset.value, item.textContent.trim()])
+                );
+
+                Object.entries(values).forEach(([field, value]) => {
+                    document.querySelectorAll(`[data-portfolio-field="${field}"]`).forEach((element) => {
+                        element.textContent = value;
+                    });
+                });
+
+                const mainImage = document.querySelector("[data-portfolio-image]");
+                mainImage.src = currentEntry.dataset.image;
+                mainImage.dataset.src = currentEntry.dataset.image;
+                mainImage.alt = values.title;
+                document.querySelector("[data-portfolio-initial]").textContent = values.title.charAt(0);
+
+                const currentIndex = projectOrder.indexOf(projectKey);
+                const previousKey = projectOrder[(currentIndex - 1 + projectOrder.length) % projectOrder.length];
+                const nextKey = projectOrder[(currentIndex + 1) % projectOrder.length];
+                const detailUrl = (key) => `{{LANG_PREFIX}}porfolio-details.html?project=${key}`;
+                const projectTitle = (key) => projects[key].querySelector('[data-value="title"]').textContent.trim();
+
+                document.querySelectorAll("[data-portfolio-prev-link]").forEach((link) => link.href = detailUrl(previousKey));
+                document.querySelectorAll("[data-portfolio-next-link]").forEach((link) => link.href = detailUrl(nextKey));
+                document.querySelector("[data-portfolio-prev-title]").textContent = projectTitle(previousKey);
+                document.querySelector("[data-portfolio-next-title]").textContent = projectTitle(nextKey);
+
+                const previousImage = document.querySelector("[data-portfolio-prev-image]");
+                previousImage.src = projects[previousKey].dataset.image;
+                previousImage.dataset.src = projects[previousKey].dataset.image;
+                previousImage.alt = projectTitle(previousKey);
+
+                const nextImage = document.querySelector("[data-portfolio-next-image]");
+                nextImage.src = projects[nextKey].dataset.image;
+                nextImage.dataset.src = projects[nextKey].dataset.image;
+                nextImage.alt = projectTitle(nextKey);
+
+                const languageLink = document.querySelector('.top-bar .support-item a[href="{{LANG_SWITCH_URL}}"]');
+                if (languageLink) languageLink.search = `?project=${projectKey}`;
+
+                document.querySelectorAll('.main-menu a[href*="porfolio-details.html"]').forEach((link) => {
+                    const item = link.closest(".sub-menu-item");
+                    if (!item) return;
+                    item.classList.remove("current-item");
+                    const linkProject = new URL(link.href, window.location.href).searchParams.get("project") || "hrms";
+                    if (linkProject === projectKey) item.classList.add("current-item");
+                });
+                document.querySelectorAll('#menu-mobile a[href*="porfolio-details.html"]').forEach((link) => {
+                    const item = link.closest(".sub-menu-mobile > .menu-item");
+                    if (!item) return;
+                    item.classList.remove("current-menu-mobile-item");
+                    const linkProject = new URL(link.href, window.location.href).searchParams.get("project") || "hrms";
+                    if (linkProject === projectKey) item.classList.add("current-menu-mobile-item");
+                });
+
+                document.title = `${values.title} | Nalara Karya Indonesia`;
+                const descriptionMeta = document.querySelector('meta[name="description"]');
+                if (descriptionMeta) descriptionMeta.content = values.intro;
+            });
+        </script>
 
          
         <!-- ============ UNIQUE PAGE CONTENT END ============== -->

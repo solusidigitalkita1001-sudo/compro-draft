@@ -1,3 +1,21 @@
 {
-  "plist_title": "Project List"
+  "plist_title": "Our Portfolio",
+  "plist_item1_category": "Human Resources Automation",
+  "plist_item1_title": "Human Resource Management System",
+  "plist_item1_desc": "An integrated HR platform that streamlines employee data, attendance, leave, payroll, performance reviews, and reporting in one workflow.",
+  "plist_item2_category": "Education Technology",
+  "plist_item2_title": "Learning Management System",
+  "plist_item2_desc": "A digital learning ecosystem for managing classes, materials, assessments, certificates, and learner progress in a structured, trackable way.",
+  "plist_item3_category": "Recruitment Technology",
+  "plist_item3_title": "Psychometric Test Management System",
+  "plist_item3_desc": "An online psychometric platform that simplifies scheduling, test delivery, automated scoring, and consistent candidate reporting.",
+  "plist_item4_category": "Retail Technology",
+  "plist_item4_title": "Point of Sales",
+  "plist_item4_desc": "A modern cashier application for faster transactions, synchronized inventory, multi-outlet operations, and real-time sales insights.",
+  "plist_item5_category": "Hospitality Technology",
+  "plist_item5_title": "Hotel Management System",
+  "plist_item5_desc": "A hotel operations platform that connects reservations, room availability, guest records, billing, housekeeping, and daily reports.",
+  "plist_item6_category": "Custom Software Development",
+  "plist_item6_title": "Custom Web & Mobile Applications",
+  "plist_item6_desc": "Tailored web and mobile solutions with intuitive interfaces, system integrations, and scalable architecture built around business needs."
 }

@@ -3,7 +3,7 @@
                 <div class="header-left flex align-items-center">
                     <div class="logo logo-header">
                         <a href="{{LANG_PREFIX}}index.html">
-                            <img src="/image/logo/logo.svg" alt="">
+                            <!--@include(partials/brand-logo.html)-->
                         </a>
                     </div>
                     <nav class="main-menu">
@@ -29,6 +29,7 @@
                                     </span>
                                 </a>
                             </li>
+                            <!-- Portfolio menu is temporarily hidden until client case studies are available.
                             <li class="menu-item menu-item-has-children position-relative">
                                 <a href="javascript:void(0)" class="item-link body-2">
                                     <span>
@@ -36,11 +37,16 @@
                                     </span>
                                 </a>
                                 <ul class="sub-menu">
-                                    <li class="sub-menu-item"><a href="{{LANG_PREFIX}}porfolio-grid.html" class="item-link-2 body-2">{{t.nav_portfolio_grid}}</a></li>
                                     <li class="sub-menu-item"><a href="{{LANG_PREFIX}}porfolio-list.html" class="item-link-2 body-2">{{t.nav_portfolio_list}}</a></li>
-                                    <li class="sub-menu-item"><a href="{{LANG_PREFIX}}porfolio-details.html" class="item-link-2 body-2">{{t.nav_portfolio_details}}</a></li>
+                                    <li class="sub-menu-item"><a href="{{LANG_PREFIX}}porfolio-details.html" class="item-link-2 body-2">{{t.portfolio_hrms_short}}</a></li>
+                                    <li class="sub-menu-item"><a href="{{LANG_PREFIX}}porfolio-details.html?project=lms" class="item-link-2 body-2">{{t.portfolio_lms_short}}</a></li>
+                                    <li class="sub-menu-item"><a href="{{LANG_PREFIX}}porfolio-details.html?project=psikotes" class="item-link-2 body-2">{{t.portfolio_psikotes_short}}</a></li>
+                                    <li class="sub-menu-item"><a href="{{LANG_PREFIX}}porfolio-details.html?project=pos" class="item-link-2 body-2">{{t.portfolio_pos_short}}</a></li>
+                                    <li class="sub-menu-item"><a href="{{LANG_PREFIX}}porfolio-details.html?project=hms" class="item-link-2 body-2">{{t.portfolio_hms_short}}</a></li>
+                                    <li class="sub-menu-item"><a href="{{LANG_PREFIX}}porfolio-details.html?project=custom" class="item-link-2 body-2">{{t.portfolio_custom_short}}</a></li>
                                 </ul>
                             </li>
+                            -->
                             <!-- <li class="menu-item menu-item-has-children position-relative">
                                 <a href="javascript:void(0)" class="item-link body-2">
                                     <span>

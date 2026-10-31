@@ -12,11 +12,62 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
 
     <!-- Icon -->
     <link rel="stylesheet" type="text/css" href="/icons/icomoon/style.css" />
 
     <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="/image/logo/favicon.png" />
-    <link rel="apple-touch-icon-precomposed" href="/image/logo/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cpath d='M42 190V50h34l88 103V50h34v140h-32L76 84v106z' fill='%23172B4D'/%3E%3Cpath d='M42 190h34v-42l-34-39z' fill='%232D8078'/%3E%3Cpath d='M164 50h34v41l-34-39z' fill='%232D5B87'/%3E%3Cpath d='M76 148l34 40H76z' fill='%23C79A52'/%3E%3C/svg%3E" />
+
+    <style>
+        :root {
+            --nalara-navy: #172B4D;
+            --nalara-blue: #2D5B87;
+            --nalara-teal: #2D8078;
+            --nalara-ink: #18212F;
+            --nalara-muted: #667085;
+            --nalara-paper: #F7F5F0;
+            --nalara-gold: #C79A52;
+            --primary: var(--nalara-teal);
+            --main-dark: var(--nalara-navy);
+            --dark-2: var(--nalara-ink);
+            --surface: var(--nalara-paper);
+            --main-blue-1: var(--nalara-blue);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Poppins", "Inter", sans-serif;
+        }
+
+        .nalara-brand-logo {
+            display: block;
+            width: 230px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .nalara-brand-mark {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Disembunyikan sampai Nalara memiliki materi portofolio dan bukti klien yang terverifikasi. */
+        .section-counting,
+        .section-testimonial,
+        .section-project,
+        .wg-counter,
+        .wg-cta .right {
+            display: none !important;
+        }
+
+        @media (max-width: 575px) {
+            .nalara-brand-logo {
+                width: 190px;
+            }
+        }
+    </style>

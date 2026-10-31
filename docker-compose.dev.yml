@@ -11,7 +11,7 @@
 #   docker compose -f docker-compose.dev.yml up -d
 #
 # Lalu tinggal edit file di source/, save, tunggu ~1 detik, refresh
-# browser di http://localhost:8080 (atau WEB_PORT=8082 jika port bentrok)
+# browser di http://localhost:8083 (atau atur WEB_PORT jika port bentrok)
 #
 # Log build bisa dilihat lewat:
 #   docker compose -f docker-compose.dev.yml logs -f build-watcher
@@ -57,5 +57,5 @@ services:
       - ./dist:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/http.d/default.conf:ro
     ports:
-      - "${WEB_PORT:-8080}:80"
+      - "${WEB_PORT:-8083}:80"
     restart: unless-stopped
